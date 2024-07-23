@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vis"
+version = "1.0"
+description = "vis"
+
+dependencies = ["ipython", "regex", "matplotlib", "numpy", "scipy", "pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["fe_utils"]
