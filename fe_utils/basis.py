@@ -1,5 +1,5 @@
 import numpy as np
-from utils import find_containing_entity
+from .utils import find_containing_entity
 
 
 class TriangulationBasisBase:
@@ -14,7 +14,7 @@ class TriangulationBasisBase:
 
 class LagrangeBasis(TriangulationBasisBase):
     def __init__(self, nodes, adj_list, degree: int = 1):
-        super.__init__(self, nodes, adj_list, degree)
+        super().__init__(nodes, adj_list, degree)
 
     def eval_at(self, points):
         res = np.zeros((points.shape[0], self.nodes.shape[0]),
