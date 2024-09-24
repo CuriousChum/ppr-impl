@@ -61,7 +61,7 @@ class FunctionalEstimateOnTriangulation:
             nbr_node = self.points[nbr_i]
             A[i] = polynomial_vct(self.degree + 1, nbr_node)
             b[i] = f_vals[nbr_i]
-        coefs = np.linalg.lstsq(A, b)
+        coefs, *_ = np.linalg.lstsq(A, b)
         return polynomial_eval(self.degree + 1, coefs, self.points[idx],
                                grad=True)
 
